@@ -16,11 +16,13 @@
 
 1. 项目分工表格
 
-    
+     
 
     | 姓名 |学号 |班级 |任务|权重|
     |:--|:--:|--:|--:|--:|
     | 丁枭波 | 31901106 | 计算1904 |      | 1.0 |
+
+    ![image-20220606221614779](proj.final.assets/image-20220606221614779.png)
 
 1. 项目自我评估表
 
@@ -28,16 +30,16 @@
 
     | 技术点          | 自评等级:(1-5) | 备注 |
     |:--|:--:|:--|
-    | 响应式编程      |3| 项目只适配移动端，网页上模拟运行app，但是对于不同机型的适配未做较大改变 |
+    | 响应式编程      |3| 前端展示的数据会随着数据库数据变化而更新                     |
     | 函数式编程      |4| vue将各个阶段调用的函数作为对象属性输出，编写函数式组件调用，其中数据多使用JSON包返回 |
-    | 模块，require规则 | 4 | 在node.js后台中，模块化数据库层和接口层的文件，接口层调用数据库层，app.js调用接口层，使用require和import函数实现了各类库的调用 |
+    | 模块，require规则 | 3 | 在node.js后台中，模块化数据库层和接口层的文件，接口层调用数据库层，app.js调用接口层，使用require和import函数实现了各类库的调用 |
     | http xhr promise cookie | 4 | 后端接口类型基本为get和post，通过req.query获取通过url传递的数据，前端使用axios异步调用接口 |
-    | REST.API | 4 | 接口实现restful风格，使用res.send传输封装好的对象或者数组 |
+    | xx框架 | 4 | 使用express框架 |
     
 1. 项目说明
 
     1. 项目由node.js后端和vue前端组成，后端使用express框架，用sequelize框架实现对数据库操作，前端使用vue3，用js编写，部分使用了vant和element-plus的组件。
-        
+       
         项目主要有登录、注册界面，个人资料显示、修改，好友信息、搜索添加好友，其他信息展示的和搜索功能和对应界面。
         
         - 首页：
@@ -311,8 +313,8 @@
         DB:"lol",
         dialect:"mysql",
       }
-      ```
-    
+  ```
+
     - 用sequelize建模型
     
       ```js
@@ -329,17 +331,19 @@
           iconUrl: {
             type: Sequelize.STRING
           },
-          
-      
-        })
-        return Lol
-      }
-      ```
-    
-      
-    
-    - 引入路由
-    
+
+
+​      
+​        })
+​        return Lol
+​      }
+​      ```
+
+
+​      
+​    
+​    - 引入路由
+​    
       ```js
       require("./app/myroutes/hero.router")(app);
       require("./app/myroutes/area.router")(app);
@@ -347,21 +351,23 @@
       require("./app/myroutes/friend.router")(app);
       require("./app/myroutes/myfriend.router")(app);
       ```
-    
-      
-    
-    - 解析
-    
+
+
+​      
+​    
+​    - 解析
+​    
       ```js
       //用bodyParser解析
       app.use(bodyParser.json());
       app.use(bodyParser.urlencoded({extended: true}));
       ```
-    
-      
-    
-    - 跨域配置
-    
+
+
+​      
+​    
+​    - 跨域配置
+​    
       ```js
       //跨域
       const cors = require("cors")
@@ -370,7 +376,7 @@
        // origin: "http://192.168.43.59:8080"
       }
       ```
-    
+
 1. 接口文档
 
      默认端口 localhost:3000/
@@ -397,7 +403,7 @@
 1. 心得体会（结合自己情况具体说明）
 
      - 大项目开发过程心得
-        
+       
        - 因为没有用node.js开发后端的经验，不知道如何开始
        
          解决：在B站寻找教程，学习express和Sequelize的使用
@@ -406,5 +412,5 @@
        
          解决：用vant的upload组件上传，学习使用multer接受文件
     - 本课程建议
-        
+      
         - 课程本身难度合适，学习没有太多困难，但实验作业的难度较大，遇到的困难较多。建议可以对平时课程实验内容的讲解更加细致，帮助像我这样学习能力不够强的同学更快理解和实践。
